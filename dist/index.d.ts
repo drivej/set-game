@@ -1,6 +1,8 @@
 export { SetGameReact } from './SetGameReact';
 export type { SetGameReactProps } from './SetGameReact';
 export { default as SetGame } from './SetGame';
+export { SetCardStandalone } from './card/SetCardStandalone';
+export type { SetCardStandaloneProps } from './card/SetCardStandalone';
 export { CardState, Shape, ShapeColor, ShapeFill } from './models';
 export type { SetCardType } from './models';
 export { SetDeckProvider } from './deck/SetDeckProvider';

@@ -5,6 +5,10 @@ export type { SetGameReactProps } from './SetGameReact';
 // Core game component
 export { default as SetGame } from './SetGame';
 
+// Standalone card component
+export { SetCardStandalone } from './card/SetCardStandalone';
+export type { SetCardStandaloneProps } from './card/SetCardStandalone';
+
 // Models and types
 export { CardState, Shape, ShapeColor, ShapeFill } from './models';
 export type { SetCardType } from './models';
