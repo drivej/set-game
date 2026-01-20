@@ -3,7 +3,7 @@ node_modules/
 test-app/node_modules/
 
 # Build output
-dist/
+# Note: dist/ is committed for library distribution
 *.tsbuildinfo
 
 # Environment files

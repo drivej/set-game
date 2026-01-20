@@ -1,0 +1,1 @@
+{"version":3,"file":"SetGameReact.d.ts","sourceRoot":"","sources":["../src/SetGameReact.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,MAAM,WAAW,iBAAiB;IAChC,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,KAAK,CAAC,EAAE,KAAK,CAAC,aAAa,CAAC;CAC7B;AAED,eAAO,MAAM,YAAY,EAAE,KAAK,CAAC,EAAE,CAAC,iBAAiB,CASpD,CAAC"}
