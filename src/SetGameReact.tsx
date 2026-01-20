@@ -10,8 +10,11 @@ export const SetGameReact: React.FC<SetGameReactProps> = ({
   className,
   style
 }) => {
+  // Always include 'set-game' namespace class to scope all styles
+  const combinedClassName = className ? `set-game ${className}` : 'set-game';
+
   return (
-    <div className={className} style={style}>
+    <div className={combinedClassName} style={style}>
       <SetGame />
     </div>
   );

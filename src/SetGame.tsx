@@ -196,7 +196,7 @@ const SetGameUI = () => {
   }, [inDeck.length, validSets.length]);
 
   return (
-    <div className='d-flex flex-column animated' style={{ minHeight: '100vh' }}>
+    <div className='set-game-container d-flex flex-column animated' style={{ minHeight: '100vh' }}>
       <div className='Sp-4 flex-shrink-1 bg-secondary text-light' style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr' }}>
         <div className='d-flex gap-1'>
           <button className='btn btn-link text-light text-decoration-none' onClick={() => setShowValidSets((s) => !s)}>

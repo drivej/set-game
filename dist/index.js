@@ -3891,7 +3891,7 @@ const Fi = () => /* @__PURE__ */ O(Li, { children: /* @__PURE__ */ O(Vi, {}) }),
     }
   }, [f]), me(() => {
     a.length === 0 && S.length === 0 && (l.length === 0 && alert("Holy Shit! This was theorestically possible but I did not actually think You would get this far. Congrats!"), u(!1), H(!0));
-  }, [a.length, S.length]), /* @__PURE__ */ ie("div", { className: "d-flex flex-column animated", style: { minHeight: "100vh" }, children: [
+  }, [a.length, S.length]), /* @__PURE__ */ ie("div", { className: "set-game-container d-flex flex-column animated", style: { minHeight: "100vh" }, children: [
     /* @__PURE__ */ ie("div", { className: "Sp-4 flex-shrink-1 bg-secondary text-light", style: { display: "grid", gridTemplateColumns: "1fr auto 1fr" }, children: [
       /* @__PURE__ */ ie("div", { className: "d-flex gap-1", children: [
         /* @__PURE__ */ ie("button", { className: "btn btn-link text-light text-decoration-none", onClick: () => T((g) => !g), children: [
@@ -3937,7 +3937,10 @@ const Fi = () => /* @__PURE__ */ O(Li, { children: /* @__PURE__ */ O(Vi, {}) }),
 }, qi = ({
   className: e,
   style: t
-}) => /* @__PURE__ */ O("div", { className: e, style: t, children: /* @__PURE__ */ O(Fi, {}) });
+}) => {
+  const r = e ? `set-game ${e}` : "set-game";
+  return /* @__PURE__ */ O("div", { className: r, style: t, children: /* @__PURE__ */ O(Fi, {}) });
+};
 export {
   ae as CardState,
   Li as SetDeckProvider,
