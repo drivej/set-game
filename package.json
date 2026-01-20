@@ -1,0 +1,56 @@
+{
+  "name": "@drivej/set-game",
+  "version": "1.0.0",
+  "description": "A reusable React component for the Set card game",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/assets/index.css"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "build": "vite build --config vite.config.build.ts && npm run build:types",
+    "build:types": "tsc --project tsconfig.json --emitDeclarationOnly --outDir dist",
+    "prepublishOnly": "npm run build",
+    "test": "cd test-app && npm run dev",
+    "test:install": "cd test-app && npm install"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/material": "^6.3.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.83.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  },
+  "keywords": [
+    "set",
+    "card-game",
+    "game",
+    "react",
+    "typescript",
+    "component"
+  ],
+  "author": "drivej",
+  "license": "MIT"
+}
