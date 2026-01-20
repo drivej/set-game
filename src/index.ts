@@ -5,7 +5,9 @@ export type { SetGameReactProps } from './SetGameReact';
 // Core game component
 export { default as SetGame } from './SetGame';
 
-// Standalone card component
+// Standalone card components
+export { RandomSetCard } from './card/RandomSetCard';
+export type { RandomSetCardProps } from './card/RandomSetCard';
 export { SetCardStandalone } from './card/SetCardStandalone';
 export type { SetCardStandaloneProps } from './card/SetCardStandalone';
 

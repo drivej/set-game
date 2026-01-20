@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { forwardRef, CSSProperties } from 'react';
+import { CSSProperties, forwardRef } from 'react';
 import { Shape, ShapeColor, ShapeFill } from '../models';
 import { ShapeDiamond, ShapePill, ShapeSquiggle } from '../SetShapes';
 
@@ -15,7 +15,7 @@ export interface SetCardStandaloneProps {
   /** The color of the symbols */
   color: ShapeColor | 'red' | 'green' | 'purple';
   /** The fill style of the symbols */
-  fill: ShapeFill | 'empty' | 'hatch' | 'solid';
+  fill: ShapeFill | 'none' | 'hatch' | 'solid';
   /** Number of symbols on the card (1, 2, or 3) */
   count: 1 | 2 | 3;
   /** Whether the card is selected */

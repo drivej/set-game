@@ -6,7 +6,7 @@ export interface SetCardStandaloneProps {
     /** The color of the symbols */
     color: ShapeColor | 'red' | 'green' | 'purple';
     /** The fill style of the symbols */
-    fill: ShapeFill | 'empty' | 'hatch' | 'solid';
+    fill: ShapeFill | 'none' | 'hatch' | 'solid';
     /** Number of symbols on the card (1, 2, or 3) */
     count: 1 | 2 | 3;
     /** Whether the card is selected */
