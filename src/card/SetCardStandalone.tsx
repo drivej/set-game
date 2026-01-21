@@ -56,7 +56,7 @@ export const SetDeckCard = forwardRef<HTMLDivElement, SetDeckCardProps>(({ cardI
       onClick={onClick}
     >
       <div className='card-front'>
-        <ShapeComponent color={info.color as ShapeColor} fill={info.shading as ShapeFill}  />
+        <ShapeComponent color={info.color as ShapeColor} fill={ShapeFill.HATCH}  />
         <ShapeComponent color={info.color as ShapeColor} fill={info.shading as ShapeFill} />
         <ShapeComponent color={info.color as ShapeColor} fill={info.shading as ShapeFill} />
       </div>
