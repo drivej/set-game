@@ -15,7 +15,7 @@ export interface RandomSetCardProps {
 }
 /**
  * A component that generates a random Set card.
- * The card properties are randomly generated on mount and remain stable.
+ * The card ID is randomly generated on mount and remains stable.
  * Use the `seed` prop to generate reproducible random cards.
  */
 export declare const RandomSetCard: import("react").ForwardRefExoticComponent<RandomSetCardProps & import("react").RefAttributes<HTMLDivElement>>;

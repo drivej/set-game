@@ -1,18 +1,5 @@
 import { CSSProperties, forwardRef, useMemo } from 'react';
-import { Shape, ShapeColor, ShapeFill } from '../models';
-import { SetCardStandalone } from './SetCardStandalone';
-
-const shapes = [Shape.DIAMOND, Shape.PILL, Shape.WIGGLE] as const;
-const colors = [ShapeColor.RED, ShapeColor.GREEN, ShapeColor.PURPLE] as const;
-const fills = [ShapeFill.NONE, ShapeFill.HATCH, ShapeFill.SOLID] as const;
-const counts = [1, 2, 3] as const;
-
-/**
- * Generates a random value from an array
- */
-const randomFrom = <T,>(arr: readonly T[]): T => {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
+import { SetDeckCard } from './SetCardStandalone';
 
 export interface RandomSetCardProps {
   /** Optional seed for reproducible randomness (uses card index as seed) */
@@ -31,46 +18,33 @@ export interface RandomSetCardProps {
 
 /**
  * A component that generates a random Set card.
- * The card properties are randomly generated on mount and remain stable.
+ * The card ID is randomly generated on mount and remains stable.
  * Use the `seed` prop to generate reproducible random cards.
  */
 export const RandomSetCard = forwardRef<HTMLDivElement, RandomSetCardProps>(
   ({ seed, selected, faceUp, className, style, onClick }, ref) => {
-    // Generate random card properties once and memoize them
-    const cardProps = useMemo(() => {
-      // If seed is provided, use it to generate deterministic random values
+    // Generate random cardId once and memoize it
+    const cardId = useMemo(() => {
+      // If seed is provided, use it to generate deterministic random value
       if (seed !== undefined) {
-        // Better seeded random number generator using multiple hash functions
-        const seededRandom = (s: number, offset: number) => {
-          // Use a combination of sin and cos for better distribution
-          const x = Math.sin(s * 12.9898 + offset * 78.233) * 43758.5453;
+        // Better seeded random number generator
+        const seededRandom = (s: number) => {
+          const x = Math.sin(s * 12.9898) * 43758.5453;
           return Math.abs(x - Math.floor(x));
         };
 
-        return {
-          shape: shapes[Math.floor(seededRandom(seed, 0) * shapes.length)],
-          color: colors[Math.floor(seededRandom(seed, 1) * colors.length)],
-          fill: fills[Math.floor(seededRandom(seed, 2) * fills.length)],
-          count: counts[Math.floor(seededRandom(seed, 3) * counts.length)]
-        };
+        // Generate a cardId between 0-80 (81 total cards in deck)
+        return Math.floor(seededRandom(seed) * 81);
       }
 
-      // Otherwise use true randomness
-      return {
-        shape: randomFrom(shapes),
-        color: randomFrom(colors),
-        fill: randomFrom(fills),
-        count: randomFrom(counts)
-      };
+      // Otherwise use true randomness (0-80)
+      return Math.floor(Math.random() * 81);
     }, [seed]);
 
     return (
-      <SetCardStandalone
+      <SetDeckCard
         ref={ref}
-        shape={cardProps.shape}
-        color={cardProps.color}
-        fill={cardProps.fill}
-        count={cardProps.count}
+        cardId={cardId}
         selected={selected}
         faceUp={faceUp}
         className={className}

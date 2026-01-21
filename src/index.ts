@@ -8,8 +8,8 @@ export { default as SetGame } from './SetGame';
 // Standalone card components
 export { RandomSetCard } from './card/RandomSetCard';
 export type { RandomSetCardProps } from './card/RandomSetCard';
-export { SetCardStandalone, SetDeckCard } from './card/SetCardStandalone';
-export type { SetCardStandaloneProps, SetDeckCardProps } from './card/SetCardStandalone';
+export { SetDeckCard } from './card/SetCardStandalone';
+export type { SetDeckCardProps } from './card/SetCardStandalone';
 
 // Models and types
 export { CardState, Shape, ShapeColor, ShapeFill } from './models';
