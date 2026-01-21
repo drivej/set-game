@@ -40,20 +40,21 @@ export const RandomSetCard = forwardRef<HTMLDivElement, RandomSetCardProps>(
     const cardProps = useMemo(() => {
       // If seed is provided, use it to generate deterministic random values
       if (seed !== undefined) {
-        // Simple seeded random number generator
-        const seededRandom = (s: number) => {
-          const x = Math.sin(s) * 10000;
-          return x - Math.floor(x);
+        // Better seeded random number generator using multiple hash functions
+        const seededRandom = (s: number, offset: number) => {
+          // Use a combination of sin and cos for better distribution
+          const x = Math.sin(s * 12.9898 + offset * 78.233) * 43758.5453;
+          return Math.abs(x - Math.floor(x));
         };
-        
+
         return {
-          shape: shapes[Math.floor(seededRandom(seed) * shapes.length)],
-          color: colors[Math.floor(seededRandom(seed + 1) * colors.length)],
-          fill: fills[Math.floor(seededRandom(seed + 2) * fills.length)],
-          count: counts[Math.floor(seededRandom(seed + 3) * counts.length)]
+          shape: shapes[Math.floor(seededRandom(seed, 0) * shapes.length)],
+          color: colors[Math.floor(seededRandom(seed, 1) * colors.length)],
+          fill: fills[Math.floor(seededRandom(seed, 2) * fills.length)],
+          count: counts[Math.floor(seededRandom(seed, 3) * counts.length)]
         };
       }
-      
+
       // Otherwise use true randomness
       return {
         shape: randomFrom(shapes),
