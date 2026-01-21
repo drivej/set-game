@@ -20,9 +20,14 @@ export interface SetCardStandaloneProps {
     /** Click handler */
     onClick?: () => void;
 }
-/**
- * A standalone Set card component that can be used independently without the game context.
- * Displays a card from the Set game with customizable shape, color, fill, and count.
- */
+export interface SetDeckCardProps {
+    cardId: number;
+    selected?: boolean;
+    faceUp?: boolean;
+    className?: string;
+    style?: CSSProperties;
+    onClick?: () => void;
+}
+export declare const SetDeckCard: import("react").ForwardRefExoticComponent<SetDeckCardProps & import("react").RefAttributes<HTMLDivElement>>;
 export declare const SetCardStandalone: import("react").ForwardRefExoticComponent<SetCardStandaloneProps & import("react").RefAttributes<HTMLDivElement>>;
 //# sourceMappingURL=SetCardStandalone.d.ts.map

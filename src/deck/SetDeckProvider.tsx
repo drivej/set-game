@@ -3,7 +3,7 @@ import { CardState, SetCardType, Shape, ShapeColor, ShapeFill } from '../models'
 import { ShapeShared } from '../SetShapes';
 import { SetDeckContext } from './SetDeckContext';
 
-const generateDeck = (): SetCardType[] => {
+export const generateDeck = (): SetCardType[] => {
   const colors: SetCardType['color'][] = Object.values(ShapeColor); // ['red', 'green', 'purple'];
   const shapes: SetCardType['shape'][] = Object.values(Shape);
   const shadings: SetCardType['shading'][] = Object.values(ShapeFill); //['solid', 'striped', 'open'];
