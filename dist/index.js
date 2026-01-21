@@ -3759,7 +3759,7 @@ const Bi = () => /* @__PURE__ */ $("div", { style: { position: "fixed", left: "-
             index: i++,
             isFaceup: !1,
             isSelected: !1
-          }), i++;
+          });
   return o;
 }, Er = (e) => {
   for (let t = e.length - 1; t > 0; t--) {

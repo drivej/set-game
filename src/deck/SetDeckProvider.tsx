@@ -28,7 +28,6 @@ export const generateDeck = (): SetCardType[] => {
             isFaceup: false,
             isSelected: false
           });
-          i++;
         }
       }
     }
