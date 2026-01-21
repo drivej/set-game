@@ -34,31 +34,31 @@ export interface SetDeckCardProps {
 export const SetDeckCard = forwardRef<HTMLDivElement, SetDeckCardProps>(({ cardId = 0, style, className, selected = false, faceUp = true, onClick }, ref) => {
   // Use modulo to wrap cardId to valid range (0-80)
   const validCardId = ((cardId % BaseDeck.length) + BaseDeck.length) % BaseDeck.length;
-  const info = BaseDeck[validCardId];
+  const card = BaseDeck[validCardId];
   console.log({BaseDeck, validCardId });
 
   // Safety check - if deck generation failed, return empty card
-  if (!info) {
+  if (!card) {
     console.error(`SetDeckCard: Invalid card at index ${validCardId}. Deck has ${BaseDeck.length} cards.`);
     return <div ref={ref} className={classNames('card', className)} style={style} />;
   }
 
-  const ShapeComponent = ShapeLookup[info.shape];
+  const Shape = ShapeLookup[card.shape as Shape];
 
   return (
     <div
       ref={ref}
       className={classNames('card', className)}
-      data-count={info.number}
+      data-count={card.number}
       data-selected={selected ? 1 : 0}
       data-faceup={faceUp ? 1 : 0}
       style={style}
       onClick={onClick}
     >
       <div className='card-front'>
-        <ShapeComponent color={info.color as ShapeColor} fill={ShapeFill.HATCH}  />
-        <ShapeComponent color={info.color as ShapeColor} fill={info.shading as ShapeFill} />
-        <ShapeComponent color={info.color as ShapeColor} fill={info.shading as ShapeFill} />
+        <Shape color={card.color as ShapeColor} fill={card.shading as ShapeFill}  />
+        <Shape color={card.color as ShapeColor} fill={card.shading as ShapeFill} />
+        <Shape color={card.color as ShapeColor} fill={card.shading as ShapeFill} />
       </div>
       <div className='card-back'></div>
     </div>
