@@ -57,6 +57,7 @@ export const SetDeckCard = forwardRef<HTMLDivElement, SetDeckCardProps>(({ cardI
   // Use modulo to wrap cardId to valid range (0-80)
   const validCardId = ((cardId % BaseDeck.length) + BaseDeck.length) % BaseDeck.length;
   const info = BaseDeck[validCardId];
+  console.log({BaseDeck, validCardId });
 
   // Safety check - if deck generation failed, return empty card
   if (!info) {
